@@ -1,36 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8">
-    <title>Dojo Boilerplate</title>
+    <title>Dojo Xrono</title>
     <!-- Application-specific CSS should be stored in your application’s package to ensure portability and to allow
-         the build system to combine & minify it. -->
+    the build system to combine & minify it. -->
     <link rel="stylesheet" href="app/resources/app.css">
-</head>
-<body class="claro">
+  </head>
+  <body class="claro">
     <!-- dojo.js is an AMD-compliant loader script. It accepts configuration either from a data-dojo-config attribute,
-         as shown here, from a global dojoConfig object (which must be defined *before* dojo.js is loaded), or from
-         a global require object.
+    as shown here, from a global dojoConfig object (which must be defined *before* dojo.js is loaded), or from
+    a global require object.
 
-         Configuration options for the loader can be viewed at http://livedocs.dojotoolkit.org/loader/amd
-         along with a bunch of additional information about its features.
+    Configuration options for the loader can be viewed at http://livedocs.dojotoolkit.org/loader/amd
+    along with a bunch of additional information about its features.
 
-         Below, we’re doing the following:
+    Below, we’re doing the following:
 
-         1. Enabling the AMD loader. (async: 1)
-         2. Fixing the loader to use normal AMD resolution of unregistered module paths (relative to baseDir)
-            instead of the traditional Dojo resolution method (relative to the parent of baseDir).
-            (tlmSiblingOfDojo: 0)
-         3. Enabling debugging. (isDebug: 1)
+    1. Enabling the AMD loader. (async: 1)
+    2. Fixing the loader to use normal AMD resolution of unregistered module paths (relative to baseDir)
+    instead of the traditional Dojo resolution method (relative to the parent of baseDir).
+    (tlmSiblingOfDojo: 0)
+    3. Enabling debugging. (isDebug: 1)
 
-         The remainder of Dojo configuration, as well as our application’s instantiation, occurs within
-         app/run.js. -->
-    <script data-dojo-config="async: 1, tlmSiblingOfDojo: 0, isDebug: 1"
-            src="dojo/dojo.js" defer></script>
+    The remainder of Dojo configuration, as well as our application’s instantiation, occurs within
+    app/run.js. -->
+    <script data-dojo-config="async: 1, tlmSiblingOfDojo: 0, isDebug: 1,
+      parseOnLoad: 1"
+      src="dojo/dojo.js" defer></script>
 
     <!-- Load the loader configuration script. Note that this module ID is hard-coded in build.sh in order to provide
-         an optimised build that loads as few as one script for the entire application. If you change the name or
-         location of this module, you will need to update build.sh too. -->
+    an optimised build that loads as few as one script for the entire application. If you change the name or
+    location of this module, you will need to update build.sh too. -->
     <script src="app/run.js" defer></script>
-</body>
+
+    <div id="xronoLayout" data-dojo-type="dijit.layout.BorderContainer"
+      data-dojo-props="design: 'headline'">
+      <div class="centerPanel" data-dojo-type="dijit.layout.TabContainer"
+        data-dojo-props="region: 'center', tabPosition: 'top'">
+        <div data-dojo-type="dijit.layout.ContentPane"
+             data-dojo-props="title: 'Group 1'">
+          <h4>Group 1 Content</h4>
+          <p>Foo</p>
+        </div>
+        <div data-dojo-type="dijit.layout.ContentPane"
+             data-dojo-props="title: 'Group 2'">
+          <h4>Group 2 Content</h4>
+          <p>Bar</p>
+        </div>
+      </div>
+      <div class="edgePanel" data-dojo-type="dijit.layout.ContentPane"
+        data-dojo-props="region: 'top'">Xrono</div>
+      <div id="leftCol" class="edgePanel"
+        data-dojo-type="dijit.layout.ContentPane"
+        data-dojo-props="region: 'left', splitter: true">Clients</div>
+    </div>
+  </body>
 </html>

@@ -41,10 +41,12 @@ define([ 'dojo/has', 'require' ], function (has, require) {
             app.dialog.startup();
 
             // And now…
-            app.dialog.show();
+            //app.dialog.show();
         });
+        require(["dijit/layout/BorderContainer", "dijit/layout/TabContainer",
+            "dijit/layout/ContentPane", "dojo/parser"]);
     }
     else {
-        console.log('Hello from the server!');
+      console.log('Hello from the server!');
     }
 });

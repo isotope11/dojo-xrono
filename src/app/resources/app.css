@@ -8,3 +8,21 @@
 
 @import '../../dojo/resources/dojo.css';
 @import '../../dijit/themes/claro/claro.css';
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+#xronoLayout {
+  height: 100%;
+}
+#leftCol {
+  width: 14em;
+}
+
+.claro .edgePanel {
+  background-color: #d0e9fc;
+} 
